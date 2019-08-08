@@ -1,7 +1,40 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <meta charset="utf-8">
+    <title>API Flickr - Maeztra FrontEnd Test</title>
+</head>
+
 <body>
-<h1>API Flickr</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <p>Criar um script para exibir 6 fotos obtidas através da API do Flickr</p>
+    <h4>GALERIA DE 6 FOTOS/by Willian Santos</h4>
+    <div id="galeria"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=";
+            $.ajax({
+                url: flickerAPI,
+                dataType: "jsonp",
+                jsonpCallback: 'jsonFlickrFeed',
+                success: function (result, status, xhr) {
+                    $.each(result.items, function (i, item) {
+                        $("<img>").attr("src", item.media.m).appendTo("#galeria");
+                        if (i === 5) {
+                            return false;
+                        }
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr)
+                    $("#galeria").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        })
+    </script>
 </body>
+
 </html>
