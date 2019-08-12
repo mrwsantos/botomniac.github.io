@@ -277,3 +277,16 @@ footer{
         text-align: center;
     }
 }
+
+@media (max-width:1231px) and (min-width:991px) {
+    body{
+
+        background: black; 
+    }
+    .search {
+        width: 120px;
+    }
+    .btn-ok{
+        margin-top: 15px;
+    }
+}​
