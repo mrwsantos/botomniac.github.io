@@ -1,0 +1,279 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+}
+ul,a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+header{
+    background: #313131;
+}
+
+/*logotipo no mobile*/
+.logotipoMob{
+    display: none;
+}
+
+/*menu navegacao*/
+nav{
+    width: 100%;
+}
+nav a{
+    color: white;
+}
+nav a:hover,.fa-shopping-cart, a:hover{
+    color: rgb(230, 90, 90);
+}
+
+.search {
+    padding: 0;
+    width: 160px;
+    border: none;
+    border-bottom: solid 1px #ffffff;
+}
+.cart{
+    color: white;
+    font-size: 0.7rem;
+    width: 100px;
+}
+.cart p{
+    margin-bottom: 0;
+}
+
+/*GALERIA*/
+.gallery{
+    margin-top: 20px;
+}
+.gallery .row .col-12{
+    margin-top: 15px;
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+/*------MAIS DESEJADOS--------*/
+.desc{
+    width: 100%;
+    padding: 0 5px;
+    margin: 0 auto;
+    display: block;
+}
+
+.novo, .frete, .oferta{
+    padding: 2px 10px;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.products{
+  padding-bottom: 15px;   
+}
+
+.imgDesc{
+ text-align: center;
+}
+
+p > span{
+    color: gray;
+    text-decoration: line-through;
+}
+
+.divPreco p{
+    color: rgb(230, 90, 90);
+}
+
+.divPreco div{
+    display: flex;
+   justify-content: center;
+}
+
+.btn-comprar{
+    display: block;
+    padding: 5px;
+}
+
+.novidades{
+    padding: 50px 100px;
+    background: rgb(200, 200, 200);
+}
+.divEmail{
+    margin-top: 50px;
+    justify-content: center
+}
+.divEmail input{
+    padding: 0 15px;
+    border: none;
+    border-bottom:2px solid rgb(34, 34, 34);
+    background-color: transparent;
+    width: 350px;
+
+}
+.btn-ok{
+    width: 120px;
+    margin-left: 15px;
+    border-radius: 0px;
+}
+.redes{
+     justify-content: center;
+ } 
+.redes img{
+    margin-top: 50px;
+    margin-right: 15px;
+    height: 40px;
+    padding: 10px;
+    border: 1px;
+    border-radius: 15px;
+    background: #fff;
+}
+
+ /***FOOTER DE AJUDA E ATENDIMENTO***/
+footer{
+    padding: 10px 0 0px;
+    background: #313131;
+    color: white;
+}
+.listaInfo li a, .listaInfo2 li a,.listaInfo3 li p{
+    font-size: 0.8rem;
+}
+
+.listaInfo2{
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 0 5px;
+    text-align: center;
+    display: inline-flex;
+    justify-items: center;
+}
+.listaInfo2 li{
+    margin-right: 15px;
+}
+.listaInfo3 {
+    text-align: end;
+}
+.listaInfo3 li{
+ margin-top: -10px;
+}
+.footer p > span{
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+
+/****INFORMAÇOES DE COMPRA E PAGAMENTO***/
+.infoCompra{
+    background: rgb(200, 200, 200);
+}
+.bandeiras, .seguranca{
+    padding: 15px 50px;
+}
+.seguranca{
+    text-align: end;
+}
+.seguranca .row{
+   float: right; 
+}
+.bandeiras img{
+    padding: 5px;
+}
+
+/****DEVELOPED BY***/
+.developedBy{
+    background:white;
+    color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+}
+.developedBy div p{
+    font-size: 0.8rem;
+}
+.powered{
+    text-align: end;
+}
+
+/***MEDIA QUERIES**/
+
+@media (max-width:990px){
+    header{
+        padding: 10px;
+    }
+    button i{
+        padding: 10px;
+        border: 1px solid rgb(230, 90, 90);
+        border-radius: 5px;
+        background: #ffffff;
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+    .logotipo{
+        display: none;
+    }
+    .logotipoMob{
+        display: block;
+        padding-left: 15px;
+    }
+    
+    .products{
+        margin-top: 15px;
+    }
+    .novo, .frete, .oferta{
+        text-align: center;
+        justify-content: center;
+        font-size: 0.5rem;
+    }
+    .novo i, .frete i, .oferta i{
+        font-size: 0.4rem;
+    }
+
+    /*------RECEBA AS NOVIDADES-----*/
+    .novidades{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .banner{
+        margin-bottom: 25px;
+    }
+    .divEmail input{
+        padding: 0 15px;
+        border: none;
+        border-bottom:2px solid rgb(34, 34, 34);
+        background-color: transparent;
+        width: 350px;
+        text-align: center;
+    }
+    .btn-ok{
+        margin: auto;
+        margin-top: 25px;
+    }
+    .footer .row{
+        text-align: center;
+    }
+    .listaInfo3 {
+        margin-top: 25px;
+        text-align: center;
+    }
+    .infoCompra,.seguranca{
+        text-align:center; 
+    }
+    .seguranca .row{
+        float: initial;
+    }
+    .bandeiras .row, .seguranca img{
+        margin: 0 auto;
+        justify-content: space-around;
+    }
+    .developedBy,.powered{
+        text-align: center;
+    }
+}
