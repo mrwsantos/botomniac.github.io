@@ -9,8 +9,12 @@ $( document ).ajaxStop(function() {
 
 //ONLOAD
 window.onload = function() {
-  
-    
+    //IMPORT HEADER AND FOOTER ----------------------------
+      // $(function () {
+    //     $("#header").load("html/common/header.html");
+    //     $("#footer").load("html/common/footer.html");
+    //   });
+    //-----------------------------------------------------
 };
 //ONLOAD
 
