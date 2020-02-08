@@ -1,0 +1,30 @@
+.footer{
+    position: fixed;
+    bottom: -150px;
+    Width: 100%;
+    Background-color: @cor1;
+    transition: 0.5s;
+    border-top: 1px solid @cor2;
+
+    @media (min-Width: @screen-md-min){
+        position: relative;
+    }
+
+    &.scrolled{
+        bottom: 0px;
+        transition: 0.5s;
+    }
+    p{
+        font-size: 12px;
+        padding-top: 10px;
+    }
+    .profLinks{
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+        img{
+            max-width: 40px !important;
+            padding: 10px;
+        }
+    }
+}

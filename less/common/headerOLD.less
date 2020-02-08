@@ -1,0 +1,97 @@
+@import "../partials/primary-button.less";
+
+.header{
+    display: flex;
+    flex-direction: row;
+    padding: 3px 10px;
+    Background-color: @cor1;
+    box-shadow: 0px 5px 16px black;
+
+    @media (max-width: @screen-md-min){
+        display:none;
+    }
+
+    .profLinks{
+        a{
+            padding: 20px;
+            &:hover{
+                -webkit-filter: drop-shadow(0px 6px 3px black);
+                filter: drop-shadow(0px 6px 3px black);  
+            }
+        }
+    }
+    .menuLinks{
+        align-self: center;
+        ul{
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            a{
+                padding: 35px 50px;
+                .primary-button();
+            }
+        }
+    }  
+
+    //---------------------MENU MOBILE
+    &-mob{        
+        @media (min-width: @screen-md-min){
+            display:none;
+        }
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+
+        .brandLogo{
+            text-align: center;
+            padding: 10px;
+            background-color: @cor1;
+            box-shadow: 0px 0px 10px black;
+        }
+    
+        .menuLinks-mob{
+            background-color: @cor2;
+            align-self: center;
+            position: absolute;
+            Width: 100%;
+            top: 90px;
+            z-index: -1;
+            transition: 0.5s;
+
+            ul{
+                display: flex;
+                flex-direction: row;
+                align-content: center;
+                justify-content: space-around;
+                a{
+                    color: @cor1;
+                    font-family: @main-font;
+                    &::before{
+                        content: url(../../img/arrowRight.png);
+                        margin-right: 5px;
+                        padding-top: 3px;
+                        display: inline;
+                        opacity: 0;  
+                        -webkit-filter: drop-shadow(0px 6px 3px black);
+                        filter: drop-shadow(0px 6px 3px black);                  
+                    }
+                    &:hover, &:active{
+                        color: @cor3;
+                        text-shadow: 0px 5px 10px black;
+                        &::before{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            &.scrolled{
+                top: 112px;
+                transition: 0.5s;
+            }
+        }
+        
+    }
+    //---------------------MENU MOBILE
+        
+}

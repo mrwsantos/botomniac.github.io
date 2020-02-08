@@ -1,0 +1,73 @@
+#homeSection{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 250px;
+    z-index: 5;
+    transition: 1s;
+
+    body.menuCollapsed &{
+        padding-left: 100px;
+        transition: 1s;
+    }
+    @media (min-Width: @screen-md-min){
+        padding-top: 35px;
+    }
+
+    .homeText{
+        font-family: @main-font;
+
+        @media (max-Width: @screen-md-min){
+            padding-top: 150px;
+        }
+
+        h1{
+            color: @cor2;
+            font-size: 7rem;
+            text-align: right;
+            line-height: 6rem;
+            @media (max-Width: @screen-md-min){
+                text-align: center;
+            }
+            span{
+                font-size: 10rem;
+                font-family: @main-font;
+            }
+        }
+        p{
+            color: @cor3;
+            font-family: @main-font-2;
+            text-align: right;
+            border-top: 2px solid @cor3;
+            margin-top: 50px;
+            max-width: 400px;
+            float: right;
+            padding-top: 10px;
+
+            @media (max-Width: @screen-md-min){
+                text-align: center;
+                float: unset;
+                margin: 0 auto;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+        }
+    }
+    .homeMosaic{
+        padding: 50px;
+        padding-top: 0;
+        padding-left: 100px;
+        @media (max-Width: @screen-md-min){
+            
+        }
+        img{
+            max-width: 100% !important;
+            height: auto !important;
+        }
+    }    
+}
+//////////////////////////////////////////////
+.hidden{
+    display: none;
+}
+/////////////////////////////////////////////
