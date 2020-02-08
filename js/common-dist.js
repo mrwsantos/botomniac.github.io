@@ -1,1 +1,1 @@
-$(function(){$("#header").load("html/common/header.html"),$("#footer").load("html/common/footer.html")}),$(document).ajaxStop(function(){$("#collapse-trigger").click(function(){$("body").toggleClass("menuCollapsed")})}),window.onload=function(){};
+$(document).ajaxStop(function(){$(".collapse-trigger").click(function(){$("body").toggleClass("menuCollapsed")})}),window.onload=function(){};

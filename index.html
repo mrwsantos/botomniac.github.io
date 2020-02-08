@@ -64,8 +64,20 @@
   <footer>
     <div id="footer"></div>
   </footer>  
-  <script type="text/javascript" src="../botomniac.github.io/js/common.js"></script>
 
+  <script>
+  //IMPORT HEADER AND FOOTER ----------------------------
+  
+  $(function () {
+    $("#header").load("html/common/header.html");
+    $("#footer").load("html/common/footer.html");
+  });
+  
+  //-----------------------------------------------------
+  </script>
+  
+  <script type="text/javascript" src="../botomniac.github.io/js/common.js"></script>
+  
 </body>
 
 </html>
