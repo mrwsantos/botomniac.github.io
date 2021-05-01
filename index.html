@@ -1,139 +1,440 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <!-- IMPORTA HEAD-TAGS -->
-  <link rel="import" href="html/common/head-tags.html">
-  <title>MR.W Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPFC ❤</title>
 </head>
 
-<body class="home">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-  <header>
-    <!-- <div id="header"></div> -->
-    <nav class="header">
-      <div class="brand-logo">
-        <a href="/"><img src="../../img/logo.png" alt="logoMrW"></a>
-      </div>
-      <div class="header-menu">
-        <ul>
-          <li>
-            <a href="#" title="HOME - Start again" id="homeBtn"><i class="fa fa-home"></i>HOME</a>
-          </li>
-          <li>
-            <a href="#about" title="ABOUT - Who am I?" id="aboutBtn"><i class="fa fa-address-card"
-                aria-hidden="true"></i> ABOUT</a>
-          </li>
-          <li>
-            <a href="#portifolio" title="PORTIFOLIO - Meet my projects" id="portfolioBtn"><i class="fa fa-picture-o"
-                aria-hidden="true"></i> PORTiFOLIO</a>
-          </li>
-          <li>
-            <a href="#recommendations" title="RECOMENDATIONS - Know what people say about me" id="recommendsBtn"><i
-                class="fa fa-star" aria-hidden="true"></i>RECOMMENDATIONS</a>
-          </li>
-          <li>
-            <a href="#contact" title="CONTACT - me" id="contactBtn"><i class="fa fa-envelope" aria-hidden="true"></i>
-              CONTACT</a>
-          </li>
-        </ul>
-      </div>
-      <div class="block-links">
-        <div class="contact-links">
-          <ul>
-            <li><a href="https://be.net/mrwsantos" title="Access my profile on Behance"><i class="fa fa-behance"
-                  aria-hidden="true"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/willwsa/" title="Access my LinkedIn"><i class="fa fa-linkedin"
-                  aria-hidden="true"></i></a></li>
-          </ul>
-        </div>
-        <div class="info-links">
-          <i class="fa fa-info-circle" aria-hidden="true"
-            title="Created by Willian Santos - MR.W - All rights reserved - FEV/2020"></i>
-          <p>Created by Willian Santos - MR.W</p>
-          <p>All rights reserved - FEV/2020</p>
-        </div>
-      </div>
-    </nav>
-    <a title="collapse/uncollapse menu" class="collapse-trigger" id="collapse-trigger"><i class="fa fa-backward"
-        aria-hidden="true"></i</a> <nav class="header-fixed-mob">
-        <div class="menu-mob">
-          <ul>
-            <li>
-              <a href="#"><i class="fa fa-home"></i>HOME</a>
-            </li>
-            <li>
-              <a href="#about"><i class="fa fa-address-card" aria-hidden="true"></i> ABOUT</a>
-            </li>
-            <li>
-              <a href="/"><i class="fa fa-picture-o" aria-hidden="true"></i> PORTFOLIO</a>
-            </li>
-            <li>
-              <a href="/"><i class="fa fa-star" aria-hidden="true"></i>RECOMMENDATIONS</a>
-            </li>
-            <li>
-              <a href="/"><i class="fa fa-envelope" aria-hidden="true"></i> CONTACT</a>
-            </li>
-          </ul>
-        </div>
-        </nav>
-  </header>
+  body {
+    background: linear-gradient(rgb(255, 23, 23), rgb(227, 16, 16));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }
 
-  <div class="global" id="global">
-    <section id=homeSection class="sec1">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md">
-            <div class="homeText">
-              <div class="homeText-title">
-                <h1 class="">welcome</h1>
-                <h1>to<span>Mr.W</span></h1>
-                <h1>profile.</h1>
-              </div>
-              <div class="homeText-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua. </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md">
-            <div class="homeMosaic">
-              <img class="img-responsive" src="img/mosaicpic.png" alt="mosaic"></a>
-            </div>
-          </div>
+  .developer {
+    font-size: 10px;
+    color: gold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+  @media (max-width: 500px) {
+    section {
+      transform: scale(.7);
+    }
+  }
+
+  section {
+    margin: 20px;
+    position: relative;
+    transition: all 1s;
+  }
+
+  section.rotate {
+    animation: rotation .7s;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .retangulo-1 {
+    background-color: #333;
+    width: 295px;
+    padding: 0px;
+    border: 15px solid white;
+  }
+
+  .interno {
+    height: 75px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid transparent;
+  }
+
+  .retangulo-2 {
+    background-color: white;
+    width: 295px;
+    height: 180px;
+    clip-path: polygon(0px 0, 295px 0, 147.5px 180px, 0 0);
+    position: relative;
+  }
+
+  .flag-1 {
+    background: rgb(255, 23, 23);
+    height: 140px;
+    width: 110px;
+    position: absolute;
+    top: 0;
+    left: 17px;
+    clip-path: polygon(0px 0, 110px 0, 110px 135px, 0 0);
+  }
+
+  .flag-2 {
+    background-color: #333;
+    height: 140px;
+    width: 110px;
+    position: absolute;
+    top: 0;
+    right: 17px;
+    transform: rotateY(180deg);
+    clip-path: polygon(0px 0, 110px 0, 110px 135px, 0 0);
+  }
+
+  .letter {
+    background-color: white;
+    width: 47px;
+    height: 55px;
+  }
+
+  .s {
+    clip-path: polygon(0px 0, 47px 0, 47px 11px, 11px 11px, 11px 22px, 47px 22px, 47px 55px, 0px 55px, 0px 44px, 36px 44px, 36px 33px, 0px 33px);
+  }
+
+  .p {
+    clip-path: polygon(0px 0, 47px 0, 47px 33px, 11px 33px, 11px 22px, 36px 22px, 36px 11px, 11px 11px, 11px 55px, 0px 55px);
+  }
+
+  .f {
+    clip-path: polygon(0px 0, 47px 0, 47px 11px, 11px 11px, 11px 22px, 47px 22px, 47px 33px, 11px 33px, 11px 55px, 0px 55px);
+  }
+
+  .c {
+    clip-path: polygon(0px 0, 47px 0, 47px 22px, 36px 22px, 36px 11px, 11px 11px, 11px 44px, 36px 44px, 36px 33px, 47px 33px, 47px 55px, 0px 55px);
+  }
+
+  .logo-branco .interno {
+    background: rgb(255, 23, 23);
+  }
+
+  .logo-branco .flag-2 {
+    background: rgba(255, 23, 13, .5);
+  }
+
+  .stars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 45px;
+    height: 75px;
+  }
+
+  .topo {
+    width: 100%;
+    transform: translateY(20px);
+  }
+
+  .baixo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 225px;
+  }
+
+  .star {
+    position: relative;
+  }
+
+  .star-2 .polygon,
+  .star-5 .polygon {
+    background-color: gold;
+  }
+
+  .polygon {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    display: block;
+    clip-path: polygon(0 0, 50px 0, 25px 15px);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+  }
+
+  .polygon-1 {
+    transform: translate(-50%, 0%);
+  }
+
+  .polygon-2 {
+    transform: translate(-80%, -20%) rotate(70deg);
+  }
+
+  .polygon-3 {
+    transform: translate(-20%, -20%) rotate(-70deg);
+  }
+
+  .symbol-border {
+    background-color: white;
+    opacity: 1;
+    position: absolute;
+    top: 118px;
+    left: -2px;
+    width: 299px;
+    height: 299px;
+    z-index: -1;
+    clip-path: polygon(0 0, 299px 0, 299px 108px, 149.5px 290px, 0 108px);
+    box-sizing: initial;
+  }
+
+  .switch {
+    border: 1px solid white;
+    height: 16px;
+    width: 75px;
+    padding: 2px;
+    border-radius: 20px;
+    display: block;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+  }
+
+  .switch::before {
+    position: absolute;
+    top: -15px;
+    content: 'SWITCH COLORS';
+    font-size: 8px;
+    color: white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .switch span {
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    display: block;
+    transition: all .3s;
+  }
+
+  body.changed {
+    background: #fff;
+  }
+
+  body.changed .symbol-border {
+    background-color: #333;
+  }
+
+  body.changed .star-1 .polygon,
+  body.changed .star-3 .polygon,
+  body.changed .star-4 .polygon {
+    background: rgb(255, 23, 23);
+  }
+
+  body.changed .switch {
+    border-color: #333;
+  }
+
+  body.changed .switch::before {
+    color: #333;
+  }
+
+  body.changed .switch span {
+    background-color: #333;
+    transform: translateX(17px);
+  }
+
+  body.changed-2 {
+    background: linear-gradient(#333, #222);
+  }
+
+  body.changed-2 .symbol-border {
+    background-color: #fff;
+  }
+
+  body.changed-2 .switch {
+    border-color: #fff;
+  }
+
+  body.changed-2 .switch::before {
+    color: #fff;
+  }
+
+  body.changed-2 .switch span {
+    background-color: #fff;
+    transform: translateX(34px);
+  }
+
+  body.changed-3 .symbol-border {
+    background-color: #fff0b3 !important;
+  }
+
+  body.changed-3 .retangulo-1 {
+    background-color: #fff0b3;
+    border: 15px solid #fff0b3;
+  }
+
+  body.changed-3 .retangulo-2 {
+    background-color: #fff0b3;
+  }
+
+  body.changed-3 .interno {
+    background-color: #333;
+    border-color: #333;
+  }
+
+  body.changed-3 .letter {
+    background-color: #fff0b3;
+  }
+
+  body.changed-3 .polygon {
+    background-color: #fff0b3 !important;
+  }
+
+  body.changed-3 .flag-1 {
+    background-color: #333;
+    opacity: .7;
+  }
+
+  body.changed-3 .flag-2 {
+    background-color: #333;
+  }
+
+  body.changed-3 .symbol-border {
+    background-color: #fff;
+  }
+
+  body.changed-3 .switch {
+    border-color: #fff0b3;
+  }
+
+  body.changed-3 .switch::before {
+    color: #fff0b3;
+  }
+
+  body.changed-3 .switch span {
+    background-color: #fff0b3;
+    transform: translateX(59px);
+  }
+</style>
+
+<body>
+  <div class="developer">Mr.W - 05/2021</div>
+
+  <section class="logo">
+    <div class="stars">
+      <div class="topo">
+        <div class="star star-1">
+          <span class="polygon polygon-1"></span>
+          <span class="polygon polygon-2"></span>
+          <span class="polygon polygon-3"></span>
         </div>
       </div>
-    </section>
-    <section class="sec2 hidden">
-      <h1 class="text-light">PART TOW</h1>
-      <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil error labore delectus
-        incidunt qui, quod
-        voluptate porro cumque ipsa ipsum distinctio. Animi perspiciatis facere illo, laudantium accusantium vitae
-        provident ex!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil error labore delectus incidunt qui,
-        quod
-        voluptate porro cumque ipsa ipsum distinctio. Animi perspiciatis facere illo, laudantium accusantium vitae
-        provident ex!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil error labore delectus incidunt qui,
-        quod
-        voluptate porro cumque ipsa ipsum distinctio. Animi perspiciatis facere illo, laudantium accusantium vitae
-        provident ex!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil error labore delectus incidunt qui,
-        quod
-        voluptate porro cumque ipsa ipsum distinctio. Animi perspiciatis facere illo, laudantium accusantium vitae
-        provident ex!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil error labore delectus incidunt qui,
-        quod
-        voluptate porro cumque ipsa ipsum distinctio. Animi perspiciatis facere illo, laudantium accusantium vitae
-        provident ex!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil error labore delectus incidunt qui,
-        quod
-        voluptate porro cumque ipsa ipsum distinctio. Animi perspiciatis facere illo, laudantium accusantium vitae
-        provident ex!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil error labore delectus incidunt qui,
-        quod
-        voluptate porro cumque ipsa ipsum distinctio. Animi perspiciatis facere illo, laudantium accusantium vitae
-        provident ex!</p>
-      <img src="img/mosaicpic.png" alt="" style="width:300px">
-    </section>
+      <div class="baixo">
+        <div class="star star-2">
+          <span class="polygon polygon-1"></span>
+          <span class="polygon polygon-2"></span>
+          <span class="polygon polygon-3"></span>
+        </div>
+        <div class="star star-3">
+          <span class="polygon polygon-1"></span>
+          <span class="polygon polygon-2"></span>
+          <span class="polygon polygon-3"></span>
+        </div>
+        <div class="star star-4">
+          <span class="polygon polygon-1"></span>
+          <span class="polygon polygon-2"></span>
+          <span class="polygon polygon-3"></span>
+        </div>
+        <div class="star star-5">
+          <span class="polygon polygon-1"></span>
+          <span class="polygon polygon-2"></span>
+          <span class="polygon polygon-3"></span>
+        </div>
+      </div>
+    </div>
+    <div class="retangulo-1">
+      <div class="interno">
+        <div class="letter s"></div>
+        <div class="letter p"></div>
+        <div class="letter f"></div>
+        <div class="letter c"></div>
+      </div>
+    </div>
+    <div class="retangulo-2">
+      <div class="flag-1"></div>
+      <div class="flag-2"></div>
+    </div>
+    <div class="symbol-border"></div>
+  </section>
+
+  <div class="switch" onclick="switchColors()">
+    <span></span>
   </div>
 
-  <script type="text/javascript" src="../botomniac.github.io/dist/js/common-dist.js"></script>
+  <!-- <section class="logo-branco">
+    <div class="retangulo-1">
+      <div class="interno">
+        <div class="letter s"></div>
+        <div class="letter p"></div>
+        <div class="letter f"></div>
+        <div class="letter c"></div>
+      </div>
+    </div>
+    <div class="retangulo-2">
+      <div class="flag-1"></div>
+      <div class="flag-2"></div>
+    </div>
 
+  </section> -->
+
+
+  <script>
+    function switchColors() {
+      var $body = document.querySelector('body');
+
+      if (!$body.classList.contains('changed')) {
+        $body.classList.add('changed');
+        rotation()
+      } else if (!$body.classList.contains('changed-2')) {
+        $body.classList.add('changed-2');
+        rotation()
+      } else if (!$body.classList.contains('changed-3')) {
+        $body.classList.add('changed-3');
+        rotation()
+      } else {
+        $body.classList.remove('changed-2');
+        $body.classList.remove('changed-3');
+        $body.classList.remove('changed');
+        rotation()
+      }
+    }
+
+    function rotation() {
+      var $section = document.querySelector('section');
+      $section.classList.add('rotate');
+      setTimeout(function () { $section.classList.remove('rotate') }, 500)
+    }
+  </script>
 </body>
 
 </html>
