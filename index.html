@@ -14,19 +14,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<!-- <link rel="stylesheet" href="style.css"> -->
+
 <style>
   *:not(i) {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    font-family: 'Playfair Display', serif
+    font-family: 'Playfair Display', serif;
   }
 
   body {
     position: relative;
     background-color: #444;
-    overflow: hidden
+    overflow: hidden;
   }
 
   .header {
@@ -36,72 +38,76 @@
     height: 80px;
     background-color: transparent;
     z-index: 50;
+
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    padding-bottom: 10px
+    padding-bottom: 10px;
   }
 
-  @media (min-width:720px) {
+  @media (min-width: 720px) {
     .header {
-      align-items: flex-end
+      align-items: flex-end;
     }
   }
 
   a:hover {
-    color: darkgoldenrod !important
+    color: darkgoldenrod !important;
   }
 
   .brand {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     text-decoration: none;
     width: 150px;
     max-width: 150px;
     margin-right: 40vw;
-    color: #fff;
+    color: white;
     text-align: center;
     transition: all 0.2s;
+
     position: absolute;
     bottom: 30px;
-    left: 15px
+    left: 15px;
   }
 
   .brand.blurred {
-    filter: blur(5px)
+    filter: blur(5px);
   }
 
-  @media (min-width:720px) {
+  @media (min-width: 720px) {
     .brand {
       display: initial;
-      bottom: 5px
+      bottom: 5px;
     }
 
     .brand i {
-      font-size: 30px
+      font-size: 30px;
     }
 
     .brand .title {
-      font-size: 20px
+      font-size: 20px;
     }
   }
 
   .brand i {
-    font-size: 25px
+    font-size: 25px;
   }
 
   .brand .title {
     display: block;
-    font-weight: 700;
-    font-size: 16px
+    font-weight: bold;
+    font-size: 16px;
   }
 
   .brand .title w {
-    font-size: 15px
+    font-size: 15px;
   }
 
+  /* BACKDROP */
   .backdrop {
     height: 100vh;
     width: 100%;
@@ -111,90 +117,103 @@
     z-index: 50;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s
+    transition: all 0.3s;
   }
 
   .backdrop.blurred {
     opacity: 1;
-    visibility: visible
+    visibility: visible;
   }
 
-  @supports (-webkit-backdrop-filter:blur(10px)) or (backdrop-filter:blur(10px)) {
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
     .backdrop {
       background-color: rgba(white, 0);
       -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px)
+      backdrop-filter: blur(10px);
     }
   }
+
+  /* BACKDROP */
 
   .actions {
     transform: translateX(500px);
     transition: all 0.2s ease;
     opacity: 0;
+
     position: absolute;
     top: 0;
     bottom: 0;
-    height: 100vh;
-    color: #fff;
-    width: 100%;
-    padding-top: 150px
+    height: 0;
+    color: white;
+    width: 0%;
+    padding-top: 150px;
+    display: none;
   }
 
-  @media (min-width:720px) {
+  @media (min-width: 720px) {
     .actions {
       width: initial;
       min-width: 400px;
       position: initial;
-      padding-top: 0;
+      padding-top: 0px;
       z-index: 5;
       transition: all 0.3s 0.2s ease-in;
       position: relative;
-      height: initial
+      height: initial;
+      display: block;
+    }
+
+    .actions.on {
+      height: initial;
+      display: block;
     }
 
     .links {
-      flex-direction: row !important
+      flex-direction: row !important;
     }
 
     .links li {
-      padding: 0 !important
+      padding: 0 !important;
     }
 
     .links a:hover {
-      color: white !important
+      color: white !important;
     }
   }
 
   .actions.on {
-    transform: translateX(0);
-    opacity: 1
+    transform: translateX(0px);
+    opacity: 1;
+    width: 100%;
+    height: 100vh;
+    display: block;
   }
 
   .links {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: column
+    flex-direction: column;
   }
 
   .links li {
-    padding: 10px 0
+    padding: 10px 0;
   }
 
   .links a {
     text-decoration: none;
     font-weight: 600;
     font-size: 18px;
-    color: #fff;
-    letter-spacing: 1.1px
+    color: white;
+    letter-spacing: 1.1px;
   }
 
   .links a:hover {
-    color: goldenrod !important
+    color: goldenrod !important;
   }
 
   .links i {
-    background-color: #fff;
+    background-color: white;
     height: 35px;
     width: 35px;
     border-radius: 35px;
@@ -202,15 +221,16 @@
     align-items: center;
     justify-content: center;
     color: #333;
-    font-size: 24px
+
+    font-size: 24px;
   }
 
   .links li {
-    transition: all 0.2s ease
+    transition: all 0.2s ease;
   }
 
   .links li:hover {
-    transform: translateY(-5px)
+    transform: translateY(-5px);
   }
 
   .actions-btn {
@@ -220,33 +240,34 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
     z-index: 999;
-    cursor: pointer
+    cursor: pointer;
   }
 
   .actions-btn:hover *,
   .actions-btn:hover *::before,
   .actions-btn:hover *::after {
-    background-color: goldenrod !important
+    background-color: goldenrod !important;
   }
 
   .btn-menu {
     width: 20px;
     height: 2px;
-    background-color: #fff;
+    background-color: white;
     text-align: right;
     display: block;
-    position: relative
+    position: relative;
   }
 
   .actions-btn.active .btn-menu {
-    background-color: goldenrod !important
+    background-color: goldenrod !important;
   }
 
   .actions-btn.active .btn-menu::before,
   .actions-btn.active .btn-menu::after {
     transform: translateX(10px);
-    background-color: goldenrod !important
+    background-color: goldenrod !important;
   }
 
   .btn-menu::before,
@@ -255,52 +276,55 @@
     width: 30px;
     height: 2px;
     display: block;
-    background-color: #fff;
+    background-color: white;
     transition: all 0.3s ease;
+
     position: absolute;
-    right: 0
+    right: 0;
   }
 
   .btn-menu::before {
-    top: -10px
+    top: -10px;
   }
 
   .btn-menu::after {
-    bottom: -10px
+    bottom: -10px;
   }
 
+  /* ----------------------------------------- */
   .container {
     height: 100vh;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
   }
 
-  @media (min-width:720px) {
+  @media (min-width: 720px) {
     .container {
-      flex-direction: row
+      flex-direction: row;
     }
   }
 
   .box-banner {
     flex: 1;
+
     overflow: hidden;
     transition: all 0.5s ease;
-    position: relative
+    position: relative;
   }
 
   .box-banner img {
     width: 100%;
     height: 100%;
-    object-fit: cover
+    object-fit: cover;
   }
 
   .box-banner.active,
   .box-banner:hover {
-    flex: 3
+    flex: 3;
   }
 
   .box-banner:hover .info {
-    opacity: 1
+    opacity: 1;
   }
 
   .info {
@@ -310,57 +334,69 @@
     opacity: 0;
     width: 100%;
     max-width: 500px;
-    background-color: rgba(0, 0, 0, .3);
-    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 8px 30px;
+
     clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+
     z-index: 5;
     display: block;
-    color: #fff;
+    color: white;
     font-size: 12px;
-    transition: all 0.3s ease-in
+    transition: all 0.3s ease-in;
+  }
+
+  @media (min-width: 720px) {
+    .info {
+      padding: 20px 40px;
+    }
   }
 
   .info h3 {
     color: darkgoldenrod;
-    font-size: 22px
+    font-size: 22px;
   }
 
   .info a {
     text-transform: uppercase;
-    color: #fff;
+    color: white;
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 300;
     display: block;
-    margin-top: 20px
+    margin-top: 20px;
   }
 
   .info p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 300;
-    opacity: .8
+    opacity: 0.8;
   }
 
   .info span {
-    transition: all 0.2s
+    transition: all 0.2s;
   }
 
   .info a:hover span {
-    padding-left: 5px
+    padding-left: 5px;
   }
 
   .footer {
     position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+    line-height: 0.5;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
   }
 
   .footer a {
     font-size: 10px;
-    color: #fff;
+    color: white;
     text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 </style>
 
@@ -403,7 +439,7 @@
     </div>
     <div class="box-banner"><img src="img/room-3.jpg" alt="Room-3">
       <span class="info">
-        <h3>Titulo</h3>
+        <h3>Cozy Living Room</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur possimus numquam a minima eos atque aliquid dicta expedita et soluta? Amet, quas.</p>
         <a href="#">Visit now <span>⇀</span></a>
       </span>
