@@ -1,437 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPFC ❤</title>
+  <title>HOME & HOME CONCEPTS</title>
 </head>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-  * {
+  *:not(i) {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
+    font-family: 'Playfair Display', serif
   }
 
   body {
-    background: linear-gradient(rgb(255, 23, 23), rgb(227, 16, 16));
+    position: relative;
+    background-color: #444;
+    overflow: hidden
+  }
+
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80px;
+    background-color: transparent;
+    z-index: 50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 10px
+  }
+
+  @media (min-width:720px) {
+    .header {
+      align-items: flex-end
+    }
+  }
+
+  a:hover {
+    color: darkgoldenrod !important
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    width: 150px;
+    max-width: 150px;
+    margin-right: 40vw;
+    color: #fff;
+    text-align: center;
+    transition: all 0.2s;
+    position: absolute;
+    bottom: 30px;
+    left: 15px
+  }
+
+  .brand.blurred {
+    filter: blur(5px)
+  }
+
+  @media (min-width:720px) {
+    .brand {
+      display: initial;
+      bottom: 5px
+    }
+
+    .brand i {
+      font-size: 30px
+    }
+
+    .brand .title {
+      font-size: 20px
+    }
+  }
+
+  .brand i {
+    font-size: 25px
+  }
+
+  .brand .title {
+    display: block;
+    font-weight: 700;
+    font-size: 16px
+  }
+
+  .brand .title w {
+    font-size: 15px
+  }
+
+  .backdrop {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s
+  }
+
+  .backdrop.blurred {
+    opacity: 1;
+    visibility: visible
+  }
+
+  @supports (-webkit-backdrop-filter:blur(10px)) or (backdrop-filter:blur(10px)) {
+    .backdrop {
+      background-color: rgba(white, 0);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px)
+    }
+  }
+
+  .actions {
+    transform: translateX(500px);
+    transition: all 0.2s ease;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    color: #fff;
+    width: 100%;
+    padding-top: 150px
+  }
+
+  @media (min-width:720px) {
+    .actions {
+      width: initial;
+      min-width: 400px;
+      position: initial;
+      padding-top: 0;
+      z-index: 5;
+      transition: all 0.3s 0.2s ease-in;
+      position: relative;
+      height: initial
+    }
+
+    .links {
+      flex-direction: row !important
+    }
+
+    .links li {
+      padding: 0 !important
+    }
+
+    .links a:hover {
+      color: white !important
+    }
+  }
+
+  .actions.on {
+    transform: translateX(0);
+    opacity: 1
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column
+  }
+
+  .links li {
+    padding: 10px 0
+  }
+
+  .links a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 1.1px
+  }
+
+  .links a:hover {
+    color: goldenrod !important
+  }
+
+  .links i {
+    background-color: #fff;
+    height: 35px;
+    width: 35px;
+    border-radius: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .developer {
-    font-size: 10px;
-    color: gold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-  }
-
-  @media (max-width: 500px) {
-    section {
-      transform: scale(.7);
-    }
-  }
-
-  section {
-    margin: 20px;
-    position: relative;
-    transition: all 1s;
-  }
-  section.rotate {
-    animation: rotation .7s;
-  }
-
-  @keyframes rotation {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-
-  .retangulo-1 {
-    background-color: #333;
-    width: 295px;
-    padding: 0px;
-    border: 15px solid white;
-  }
-
-  .interno {
-    height: 75px;
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid transparent;
-  }
-
-  .retangulo-2 {
-    background-color: white;
-    width: 295px;
-    height: 180px;
-    clip-path: polygon(0px 0, 295px 0, 147.5px 180px, 0 0);
-    position: relative;
-  }
-
-  .flag-1 {
-    background: rgb(255, 23, 23);
-    height: 140px;
-    width: 110px;
-    position: absolute;
-    top: 0;
-    left: 17px;
-    clip-path: polygon(0px 0, 110px 0, 110px 135px, 0 0);
-  }
-
-  .flag-2 {
-    background-color: #333;
-    height: 140px;
-    width: 110px;
-    position: absolute;
-    top: 0;
-    right: 17px;
-    transform: rotateY(180deg);
-    clip-path: polygon(0px 0, 110px 0, 110px 135px, 0 0);
-  }
-
-  .letter {
-    background-color: white;
-    width: 47px;
-    height: 55px;
-  }
-
-  .s {
-    clip-path: polygon(0px 0, 47px 0, 47px 11px, 11px 11px, 11px 22px, 47px 22px, 47px 55px, 0px 55px, 0px 44px, 36px 44px, 36px 33px, 0px 33px);
-  }
-
-  .p {
-    clip-path: polygon(0px 0, 47px 0, 47px 33px, 11px 33px, 11px 22px, 36px 22px, 36px 11px, 11px 11px, 11px 55px, 0px 55px);
-  }
-
-  .f {
-    clip-path: polygon(0px 0, 47px 0, 47px 11px, 11px 11px, 11px 22px, 47px 22px, 47px 33px, 11px 33px, 11px 55px, 0px 55px);
-  }
-
-  .c {
-    clip-path: polygon(0px 0, 47px 0, 47px 22px, 36px 22px, 36px 11px, 11px 11px, 11px 44px, 36px 44px, 36px 33px, 47px 33px, 47px 55px, 0px 55px);
-  }
-
-  .logo-branco .interno {
-    background: rgb(255, 23, 23);
-  }
-
-  .logo-branco .flag-2 {
-    background: rgba(255, 23, 13, .5);
-  }
-
-  .stars {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 45px;
-    height: 75px;
-  }
-
-  .topo {
-    width: 100%;
-    transform: translateY(20px);
-  }
-
-  .baixo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 225px;
-  }
-
-  .star {
-    position: relative;
-  }
-
-  .star-2 .polygon,
-  .star-5 .polygon {
-    background-color: gold;
-  }
-
-  .polygon {
-    background-color: white;
-    width: 50px;
-    height: 50px;
-    display: block;
-    clip-path: polygon(0 0, 50px 0, 25px 15px);
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transform-origin: center;
-  }
-
-  .polygon-1 {
-    transform: translate(-50%, 0%);
-  }
-
-  .polygon-2 {
-    transform: translate(-80%, -20%) rotate(70deg);
-  }
-
-  .polygon-3 {
-    transform: translate(-20%, -20%) rotate(-70deg);
-  }
-
-  .symbol-border {
-    background-color: white;
-    opacity: 1;
-    position: absolute;
-    top: 118px;
-    left: -2px;
-    width: 299px;
-    height: 299px;
-    z-index: -1;
-    clip-path: polygon(0 0, 299px 0, 299px 108px, 149.5px 290px, 0 108px);
-    box-sizing: initial;
-  }
-
-  .switch {
-    border: 1px solid white;
-    height: 16px;
-    width: 75px;
-    padding: 2px;
-    border-radius: 20px;
-    display: block;
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    cursor: pointer;
-  }
-
-  .switch::before {
-    position: absolute;
-    top: -15px;
-    content: 'SWITCH COLORS';
-    font-size: 8px;
-    color: white;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-
-  .switch span {
-    background-color: white;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    display: block;
-    transition: all .3s;
-  }
-
-  body.changed {
-    background: #fff;
-  }
-
-  body.changed .symbol-border {
-    background-color: #333;
-  }
-
-  body.changed .star-1 .polygon,
-  body.changed .star-3 .polygon,
-  body.changed .star-4 .polygon {
-    background: rgb(255, 23, 23);
-  }
-
-  body.changed .switch {
-    border-color: #333;
-  }
-
-  body.changed .switch::before {
     color: #333;
+    font-size: 24px
   }
 
-  body.changed .switch span {
-    background-color: #333;
-    transform: translateX(17px);
+  .links li {
+    transition: all 0.2s ease
   }
 
-  body.changed-2 {
-    background: linear-gradient(#333, #222);
+  .links li:hover {
+    transform: translateY(-5px)
   }
 
-  body.changed-2 .symbol-border {
+  .actions-btn {
+    height: 40px;
+    width: 40px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 999;
+    cursor: pointer
+  }
+
+  .actions-btn:hover *,
+  .actions-btn:hover *::before,
+  .actions-btn:hover *::after {
+    background-color: goldenrod !important
+  }
+
+  .btn-menu {
+    width: 20px;
+    height: 2px;
     background-color: #fff;
+    text-align: right;
+    display: block;
+    position: relative
   }
 
-  body.changed-2 .switch {
-    border-color: #fff;
+  .actions-btn.active .btn-menu {
+    background-color: goldenrod !important
   }
 
-  body.changed-2 .switch::before {
+  .actions-btn.active .btn-menu::before,
+  .actions-btn.active .btn-menu::after {
+    transform: translateX(10px);
+    background-color: goldenrod !important
+  }
+
+  .btn-menu::before,
+  .btn-menu::after {
+    content: '';
+    width: 30px;
+    height: 2px;
+    display: block;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    position: absolute;
+    right: 0
+  }
+
+  .btn-menu::before {
+    top: -10px
+  }
+
+  .btn-menu::after {
+    bottom: -10px
+  }
+
+  .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column
+  }
+
+  @media (min-width:720px) {
+    .container {
+      flex-direction: row
+    }
+  }
+
+  .box-banner {
+    flex: 1;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    position: relative
+  }
+
+  .box-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+  }
+
+  .box-banner.active,
+  .box-banner:hover {
+    flex: 3
+  }
+
+  .box-banner:hover .info {
+    opacity: 1
+  }
+
+  .info {
+    position: absolute;
+    bottom: 10vh;
+    left: 10vw;
+    opacity: 0;
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, .3);
+    padding: 20px 40px;
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+    z-index: 5;
+    display: block;
     color: #fff;
+    font-size: 12px;
+    transition: all 0.3s ease-in
   }
 
-  body.changed-2 .switch span {
-    background-color: #fff;
-    transform: translateX(34px);
+  .info h3 {
+    color: darkgoldenrod;
+    font-size: 22px
   }
 
-  body.changed-3 .symbol-border {
-    background-color: #fff0b3 !important;
+  .info a {
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+    display: block;
+    margin-top: 20px
   }
 
-  body.changed-3 .retangulo-1 {
-    background-color: #fff0b3;
-    border: 15px solid #fff0b3;
+  .info p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+    opacity: .8
   }
 
-  body.changed-3 .retangulo-2 {
-    background-color: #fff0b3;
+  .info span {
+    transition: all 0.2s
   }
 
-  body.changed-3 .interno {
-    background-color: #333;
-    border-color: #333;
+  .info a:hover span {
+    padding-left: 5px
   }
 
-  body.changed-3 .letter {
-    background-color: #fff0b3;
+  .footer {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%)
   }
 
-  body.changed-3 .polygon {
-    background-color: #fff0b3 !important;
-  }
-
-  body.changed-3 .flag-1 {
-    background-color: #333;
-    opacity: .7;
-  }
-
-  body.changed-3 .flag-2 {
-    background-color: #333;
-  }
-
-  body.changed-3 .symbol-border {
-    background-color: #fff;
-  }
-
-  body.changed-3 .switch {
-    border-color: #fff0b3;
-  }
-
-  body.changed-3 .switch::before {
-    color: #fff0b3;
-  }
-
-  body.changed-3 .switch span {
-    background-color: #fff0b3;
-    transform: translateX(59px);
+  .footer a {
+    font-size: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
   }
 </style>
 
 <body>
-  <div class="developer">Mr.W - 05/2021</div>
 
-  <section class="logo">
-    <div class="stars">
-      <div class="topo">
-        <div class="star star-1">
-          <span class="polygon polygon-1"></span>
-          <span class="polygon polygon-2"></span>
-          <span class="polygon polygon-3"></span>
-        </div>
-      </div>
-      <div class="baixo">
-        <div class="star star-2">
-          <span class="polygon polygon-1"></span>
-          <span class="polygon polygon-2"></span>
-          <span class="polygon polygon-3"></span>
-        </div>
-        <div class="star star-3">
-          <span class="polygon polygon-1"></span>
-          <span class="polygon polygon-2"></span>
-          <span class="polygon polygon-3"></span>
-        </div>
-        <div class="star star-4">
-          <span class="polygon polygon-1"></span>
-          <span class="polygon polygon-2"></span>
-          <span class="polygon polygon-3"></span>
-        </div>
-        <div class="star star-5">
-          <span class="polygon polygon-1"></span>
-          <span class="polygon polygon-2"></span>
-          <span class="polygon polygon-3"></span>
-        </div>
-      </div>
-    </div>
-    <div class="retangulo-1">
-      <div class="interno">
-        <div class="letter s"></div>
-        <div class="letter p"></div>
-        <div class="letter f"></div>
-        <div class="letter c"></div>
-      </div>
-    </div>
-    <div class="retangulo-2">
-      <div class="flag-1"></div>
-      <div class="flag-2"></div>
-    </div>
-    <div class="symbol-border"></div>
-  </section>
+  <div class="backdrop"></div>
 
-  <div class="switch" onclick="switchColors()">
-    <span></span>
+  <header class="header">
+    <a href="#" class="brand"><i class="fas fa-couch"></i><span class="title">Home <w>&</w> Home</span></a>
+
+    <div class="actions">
+      <ul class="links">
+        <li><a href="#">Portifolio</a></li>
+        <li><a href="#">Room</a></li>
+        <li><a href="#">Kitchen</a></li>
+        <li><a href="#">Office</a></li>
+        <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+
+    <div class="actions-btn">
+      <span class="btn-menu"></span>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="box-banner"><img src="imgs/room-1.jpg" alt="Room-1">
+      <span class="info">
+        <h3>Modern Living Room</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos, rerum! Lorem ipsum dolor sit amet.</p>
+        <a href="#">Visit now <span>⇀</span></a>
+      </span>
+    </div>
+    <div class="box-banner"><img src="imgs/room-2.jpg" alt="Room-2">
+      <span class="info">
+        <h3>Minimalist Living Room</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nihil aut ex magnam, quaerat, hic beatae inventore vel harum atque ipsam quae cum expedita officia.</p>
+        <a href="#">Visit now <span>⇀</span></a>
+      </span>
+    </div>
+    <div class="box-banner"><img src="imgs/room-3.jpg" alt="Room-3">
+      <span class="info">
+        <h3>Titulo</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur possimus numquam a minima eos atque aliquid dicta expedita et soluta? Amet, quas.</p>
+        <a href="#">Visit now <span>⇀</span></a>
+      </span>
+    </div>
   </div>
 
-  <!-- <section class="logo-branco">
-    <div class="retangulo-1">
-      <div class="interno">
-        <div class="letter s"></div>
-        <div class="letter p"></div>
-        <div class="letter f"></div>
-        <div class="letter c"></div>
-      </div>
-    </div>
-    <div class="retangulo-2">
-      <div class="flag-1"></div>
-      <div class="flag-2"></div>
-    </div>
-
-  </section> -->
-
+  <div class="footer">
+    <a href="https://mrwsite.com.br">Projected and developed by Willian Santos - Mr. W - May 2021</a>
+  </div>
 
   <script>
-    function switchColors() {
-      var $body = document.querySelector('body');
+    if ($(window).width() < 720) {
+      $('.box-banner:eq(0)').addClass('active');
 
-      if (!$body.classList.contains('changed')) {
-        $body.classList.add('changed');
-        rotation()
-      } else if (!$body.classList.contains('changed-2')) {
-        $body.classList.add('changed-2');
-        rotation()
-      } else if (!$body.classList.contains('changed-3')) {
-        $body.classList.add('changed-3');
-        rotation()
-      } else {
-        $body.classList.remove('changed-2');
-        $body.classList.remove('changed-3');
-        $body.classList.remove('changed');
-        rotation()
+      $('.box-banner').on('click', () => {
+        $('.box-banner').removeClass('active');
+        $(this).addClass('active');
       }
+      )
     }
 
-    function rotation() {
-      var $section = document.querySelector('section');
-      $section.classList.add('rotate');
-      setTimeout(function () { $section.classList.remove('rotate') }, 500)
-    }
+    $('.actions-btn').on('click', function () {
+      $(this).toggleClass('active');
+      $('.actions').toggleClass('on');
+
+      if ($(window).width() < 720) {
+        $('.backdrop').toggleClass('blurred');
+        $('.brand').toggleClass('blurred');
+      }
+    })
   </script>
 </body>
 
