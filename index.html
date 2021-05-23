@@ -352,6 +352,19 @@
   .campeao {
     font-size: 60px;
     color: white;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .campeao {
+      font-size: 32px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    img {
+      margin-right: 0 !important;
+    }
   }
 </style>
 
@@ -404,7 +417,8 @@
     </div>
     <div class="symbol-border"></div>
   </section>
-  <section>
+  <section style="display: flex;align-items: center;flex-wrap: wrap;justify-content: center;">
+    <img src="taca.png" alt="" style="max-width: 50px;display: block; margin-right:30px">
     <h1 class="campeao">Campeão Paulista 2021!</h1>
   </section>
 
