@@ -1,0 +1,95 @@
+//ESQUEMA DE CORES
+:root {
+  --color-1: #161618; //GRAFITE
+  --color-2: #e5b648; //YELLOW
+  --color-3: #ffffff; //WHITE
+  // --color-1: #0c101c; //DEEPBLUE
+}
+
+//LIGHT MODE
+[data-theme="light"] {
+  --color-1: #f7f7f7; //WHITE
+  --color-2: #161618; //GRAFITE
+  --color-3: #e5b648; //YELLOW
+  // --color-2: #0c101c; //DEEPBLUE
+
+  .welcome-image {
+    filter: brightness(0.1);  
+  }
+
+  .header {
+    background-color: var(--color-2);
+
+    .block-center a,
+    .header-block a {
+      color: var(--color-3);
+
+      &:hover,
+      &.active {
+        color: var(--color-1);
+      }
+    }
+    .block-bottom {
+      ul,
+      li:first-child {
+        border-color: var(--color-3) !important;
+      }
+
+      a:hover {
+        color: var(--color-1);
+      }
+    }
+  }
+
+  #header .collapse i {
+    color: var(--color-2);
+  }
+
+  .sectionAbout {
+    background-color: var(--color-3);
+    h1{
+      color: var(--color-2);
+    }
+    h1:after {
+      background-color: var(--color-1);
+    }
+  }
+
+  body {
+    position: relative;
+    background-color: var(--color-1);
+    &:before {
+      content: "";
+      opacity: 0.4;
+      top: -30px;
+      left: 0;
+      bottom: -100px;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+      background-image: url(../../img/common/marbleTable.png);
+      background-position: center;
+    }
+  }
+
+  @media screen and(max-width:$screen-sm-max) {
+    .about .second-block p {
+      color: var(--color-2);
+    }
+    .recommendations .second-block {
+      h3,
+      p {
+        color: var(--color-3);
+      }
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: none !important;
+      -webkit-filter: none !important;
+    }
+    .toggle-mode {
+      --color-2: #f7f7f7;
+    }
+  }
+}

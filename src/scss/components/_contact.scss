@@ -1,0 +1,214 @@
+.contact {
+  display: block;
+  padding: 100px 0 50px;
+
+  @media screen and(min-width: $screen-md-min) {
+    padding-left: 240px;
+    transition: all 0.5s;
+    margin-bottom: 0;
+  }
+
+  h1.title-section,
+  p {
+    padding-left: 50px;
+    @media screen and(min-width: $screen-xs-min) {
+      padding-left: 0px;
+    }
+  }
+
+  h5{
+    color: var(--color-2);
+    display: block;
+    margin: 20px;
+  }
+
+  body.menu-collapsed & {
+    padding-left: 170px;
+    transition: all 0.5s;
+  }
+
+  p {
+    text-align: center;
+    color: var(--color-2);
+
+    margin-top: 30px;
+  }
+
+  //ESTILIZACAO DOS BOTOES SOCIAIS----------------------------------
+  .social-buttons {
+    text-align: center;
+    margin-bottom: 30px;
+
+    a {
+      background-color: #4d4d4d;
+      font-size: $f24;
+      margin: 5px;
+      color: white;
+      text-align: center;
+      display: inline-block;
+      border-radius: 20px;
+      width: 40px;
+      height: 40px;
+      transition: all 0.2s;
+      box-shadow: 0 3px 6px transparent;
+
+      i {
+        line-height: 40px;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.2s;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+
+        i {
+          color: white;
+        }
+
+        &.facebook {
+          background-color: #485a96;
+        }
+        &.whatsapp {
+          background-color: #2eaf1e;
+        }
+        &.behance {
+          background-color: #025bff;
+        }
+        &.linkedin {
+          background-color: #0076b4;
+        }
+      }
+    }
+  }
+  //ESTILIZACAO DOS BOTOES SOCIAIS----------------------------------
+
+  .content{
+    p{
+    padding-left: 0px;
+    }
+  }
+
+  //ESTILIZACAO DOS CAMPOS DO FORMULARIO-------------------------------------
+  .formulary {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: none;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+
+    html[data-theme="dark"] & {
+      background-color: transparent;
+      box-shadow: 0 15px 40px black;
+    }  
+
+    input::not([type="submit"]),
+    textarea {
+      background-color: white;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid transparent;
+
+      html[data-theme="dark"] & {
+        border: none;
+        border-bottom: 3px solid transparent;
+        border-bottom-width: 3px !important;
+      }
+
+      &:focus:not(:invalid) {
+        outline: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+        border-bottom: 1px solid #e5b548;
+        transition: opacity 1s;
+
+        html[data-theme="dark"] & {
+          border-bottom: 3px solid #e5b548;
+        }
+      }
+
+      &:focus:invalid {
+        border-bottom: 1px solid crimson;
+      }
+
+      &[type="email"] {
+        margin-top: 15px;
+        @media screen and (min-width: $screen-sm-min) {
+          margin-top: 0px;
+        }
+      }
+    }
+
+    input:placeholder-shown,
+    textarea:placeholder-shown {
+      + label {
+        transform: translateY(-30px);
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    textarea {
+      min-height: 200px;
+      background-color: white;
+      border-radius: 0;
+      border: none;
+      resize: none;
+
+      &:focus {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+      }
+    }
+
+    .primary-button {
+      width: 110px;
+      height: 42px;
+
+      &:hover{
+        overflow: unset;
+
+        i{
+          &:before{
+            animation: paper-plane 3s ease;
+            animation-delay: 1s;
+          }
+        }
+      }    
+      
+      button{
+        pointer-events: none;
+      }
+
+      input{
+        padding: 10px 30px;
+      }
+    }
+
+    label {
+      font-size: $f12;
+      margin-left: 13px;
+      display: block;
+      transition: all 0.3s;
+      color: rgb(114, 114, 114);
+
+      html[data-theme="dark"] & {
+        color: var(--color-2);
+      }
+    }
+
+    //ESTILIZACAO DO FORMULARIO LABELS ANIMADAS
+  }
+  //ESTILIZACAO DOS CAMPOS DO FORMULARIO-------------------------------------
+  #msg{
+    display: none;
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+    transition: all .4s;
+    
+    &.form-sent{
+      display: block;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+}

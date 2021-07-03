@@ -1,0 +1,114 @@
+.sections {
+  section {
+    @media screen and(min-width:$screen-md-min) {
+      min-height: 100vh;
+      height: 100%;
+      position: relative;
+    }
+    @media screen and(min-width:1920px) {
+      min-height: 125vh !important;
+      height: 100% !important;
+      position: relative;
+    }
+
+    &.sectionAbout {
+      @media screen and(min-width:$screen-md-min) {
+        height: 115vh;
+      }
+    }
+    &.sectionServices {
+      @media screen and(min-width:$screen-md-min) {
+        min-height: 100vh;
+        height: 100%;
+      }
+    }
+    &.sectionGallery {
+      height: auto;
+    }
+
+    //alinhamento vertical e horizontal do contedo quando desktop
+    .home,
+    .about,
+    .portfolio,
+    .recommendations,
+    .contact {
+      @media screen and(min-width: 1600px) {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+      }
+    }
+    //alinhamento vertical e horizontal do conteudo quando desktop
+  }
+
+  section {
+    &.sectionHome {
+      @media (min-width: $screen-md-min){
+      transition: all 1s;
+        opacity: 0;
+        &[data-scroll="in"] {
+          opacity: 1;
+        }
+      }
+    }
+
+    &.sectionAbout {
+      transition: all 1s;
+      opacity: 0;
+      &[data-scroll="in"] {
+        opacity: 1;
+
+        .load {
+          animation: loading 1.5s reverse ease-in;
+        }
+      }
+      // &[data-scroll="in"] {
+      // transform: translateX(0);
+      // }
+    }
+
+    &.sectionGallery {
+      .wrapper {
+        transform: translateX(-100vw);
+        transition: all 0.7s cubic-bezier(0.46, 0.08, 0.52, 1.29);
+      }
+
+      &[data-scroll="in"] {
+        .wrapper {
+          transform: translateX(0);
+        }
+      }
+    }
+    &.sectionRecommends {
+      opacity: 0;
+      &[data-scroll="in"] {
+        opacity: 1;
+      }
+    }
+
+    &.sectionContact {
+      opacity: 0;
+      transition: all 1s;
+      &[data-scroll="in"] {
+        opacity: 1;
+      }
+    }
+  }
+
+  .sectionAbout {
+      background-image: url('../../img/gallery/photography/sunrise.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    position: relative;
+  }
+
+  .sectionRecommends {
+    background-color: var(--color-2);
+
+    @media screen and(min-width: $screen-sm-min) {
+      background-color: transparent;
+    }
+  }
+}

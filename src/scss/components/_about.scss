@@ -1,0 +1,161 @@
+@import "https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap";
+
+.about {
+  padding: 50px 0;
+  margin-top: 50px;
+
+  @media screen and(min-width: $screen-md-min) {
+    padding-left: 240px;
+    transition: all 0.5s;
+  }
+
+  body.menu-collapsed & {
+    padding-left: 170px;
+    transition: all 0.5s;
+  }
+
+  .loading-bar {
+    .fundo {
+      background-color: var(--color-1);
+      height: 15px;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding-bottom: 3px;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    span {
+      display: block;
+      margin-top: -10px;
+      color: white;
+      margin: 10px;
+      margin-left: 0;
+      // text-transform: lowercase;
+    }
+
+    .load {
+      background-color: var(--color-2);
+      height: 100%;
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+    }
+  }
+
+  .second-block {
+    color: var(--color-3);
+    display: flex;
+    margin-top: -8px;
+    padding: 30px;
+    padding-right: 0px;
+
+    @media screen and(min-width: $screen-md-min) {
+      background-color: var(--color-2);
+      color: var(--color-1);
+      height: 80vh;
+      vertical-align: middle;
+      display: flex;
+      align-items: center;
+      padding: 30px 20px;
+    }
+  }
+
+  h1 {
+    padding-left: 50px;
+    @media screen and(min-width: $screen-xs-min) {
+      padding-left: 0px;
+    }
+
+    &:after {
+      background-color: var(--color-3);
+    }
+  }
+
+  .text {
+    background-color: rgba(black, 0.6);
+    position: relative;
+    width: 100%;
+    height: 500px;
+    padding: 25px;
+
+    html[data-theme="light"] & {
+      background-color: rgba(white, 0.6);
+    }
+
+    @media (min-width: $screen-md-min) {
+      background-color: rgba(black, 0);
+      html[data-theme="light"] & {
+        background-color: rgba(white, 0);
+      }
+    }
+  }
+
+  p {
+    font-family: "Kalam", cursive;
+    font-size: $f20;
+    text-align: right;
+  }
+
+  span {
+    text-align: left;
+  }
+
+  #carouselAbout {
+    height: 100%;
+    width: 100%;
+
+    .carousel-item {
+      height: 100%;
+      position: relative;
+      p {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  .carousel-item-next {
+    position: relative;
+    p {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .carousel-indicators {
+    li {
+      background-color: var(--color-1);
+      height: 6px;
+
+      &.active {
+        background-color: var(--color-3);
+      }
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    bottom: -350px;
+
+    @media (min-width: $screen-md-min) {
+      bottom: -0;
+    }
+  }
+  .carousel-control-prev {
+    left: 30%;
+    @media (min-width: $screen-md-min) {
+      left: -30px;
+    }
+  }
+  .carousel-control-next {
+    right: 30%;
+    @media (min-width: $screen-md-min) {
+      right: -30px;
+    }
+  }
+}

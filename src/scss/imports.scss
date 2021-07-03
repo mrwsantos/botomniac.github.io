@@ -1,0 +1,33 @@
+//variaveis
+@import "variables/global";
+@import "variables/colors";
+@import "variables/fonts";
+@import "variables/font-variables";
+@import "variables/font-face";
+
+//common
+@import "common/footer";
+@import "common/header";
+@import "common/sections";
+@import "common/$.slick";
+
+//partials
+@import "partials/primary-button";
+@import "partials/hover";
+@import "partials/title-section";
+@import "partials/keyframes-animations";
+
+//STRUCTURE
+@import "structure";
+
+//SECTIONS
+@import "components/home";
+@import "components/about";
+@import "components/services";
+@import "components/recommendations";
+@import "components/contact";
+@import "components/gallery";
+
+//LIGHTBOX
+@import "components/lightbox";
+

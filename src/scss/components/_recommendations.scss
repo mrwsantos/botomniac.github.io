@@ -1,0 +1,273 @@
+.recommendations {
+  padding: 50px 0;
+  padding-top: 100px;
+
+  @media screen and(min-width: $screen-md-min) {
+    padding-left: 240px;
+    transition: all 0.5s;
+  }
+
+  body.menu-collapsed & {
+    padding-left: 170px;
+    transition: all 0.5s;
+  }
+
+  .primary-button {
+    &:hover {
+      i {
+        &:before {
+          animation: pulsing-heart 1.5s infinite ease-in;
+          -webkit-text-stroke-width: 0.5px;
+          -webkit-text-stroke-color: white;
+        }
+      }
+    }
+
+    a{
+      padding: 7px 30px;
+    }
+  }
+
+  .first-block {
+    padding-top: 30px;
+    display: block;
+    padding: 30px 0;
+    margin-top: -8px;
+    background-color: var(--color-2);
+    color: var(--color-1);
+    height: 100vh;
+
+    @media screen and(min-width:468px) {
+      padding: 5px;
+      height: auto;
+    }
+    @media screen and(min-width:991px) {
+      height: 90vh;
+    }
+    @media screen and(min-width:1150px) {
+      padding: 30px;
+      height: 100vh;
+    }
+    @media screen and(min-width:1200px) {
+      height: 80vh;
+    }
+  }
+
+  h1 {
+    margin-left: 50px;
+
+    @media screen and(min-width: $screen-xs-min) {
+      margin-left: 0px;
+    }
+  }
+
+  .text {
+    position: relative;
+    // width: 100%;
+    height: 380px;
+    padding: 15px;
+
+    @media (min-width: $screen-md-min) {
+      height: 100%;
+    }
+
+    p {
+      font-family: "Kalam", cursive;
+      font-size: $f20;
+      text-align: justify;
+      color: #161618;
+
+      html[data-theme="light"] & {
+        color: white;
+      }
+    }
+
+    small {
+      display: block;
+      text-align: right;
+      font-style: italic;
+      font-size: $f14 - 1;
+
+      &:nth-child(1) {
+        font-weight: bold;
+        font-size: $f14 + 1;
+        margin-top: 5px;
+      }
+    }
+
+    .carousel-block{
+      @media (min-width: 575px){
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__image-shape {
+    width: 100px;
+    height: 100px;
+    float: left;
+    background-color: orange;
+    transform: translate(-10px, -10px);
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+    @supports (clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      -webkit-shape-outside: circle(50% at 50% 20%);
+      shape-outside: circle(50% at 50% 20%);
+      border-radius: none;
+    }
+  }
+
+  &__image-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+
+  &__image {
+    height: 100%;
+    backface-visibility: hidden;
+    transition: all 0.5s;
+  }
+
+  #carouselComments {
+    height: 100%;
+    width: 100%;
+
+    .carousel-item {
+      height: auto;
+      position: relative;
+      
+      @media (min-width: 575px){
+        height: 100%;
+      }
+    }
+
+    .carousel-item-next,
+    .carousel-item-left
+     {
+      height: auto;
+      position: relative;
+      
+      @media (min-width: 575px){
+        height: 100%;
+      }
+    }
+
+    .carousel-inner {
+      height: 100%;
+    }
+  }
+
+  .carousel-caption {
+    right: 0;
+    top: 0;
+    left: 0;
+  }
+
+  .carousel-indicators {
+    bottom: 0;
+    li {
+      background-color: var(--color-1);
+      height: 6px;
+
+      &.active {
+        background-color: var(--color-3);
+      }
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    bottom: 40px;
+    top: unset;
+    @media (min-width: $screen-lg) {
+      bottom: -0;
+      top: 0;
+    }
+  }
+
+  .carousel-control-prev {
+    left: 30%;
+    @media (min-width: $screen-lg) {
+      left: -50px;
+    }
+  }
+
+  .carousel-control-next {
+    right: 30%;
+    @media (min-width: $screen-lg) {
+      right: -50px;
+    }
+  }
+
+  .second-block {
+    padding: 0px;
+    background-color: var(--color-2);
+    margin-top: -20px;
+    position: relative;
+
+    .content {
+      padding-bottom: 15px;
+    }
+
+    h3 {
+      margin-top: 50px;
+      @media screen and(min-width:$screen-md-min) {
+        margin-top: 0px;
+        color: var(--color-3);
+      }
+    }
+
+    @media screen and(min-width:$screen-sm-min) {
+      padding: 50px;
+    }
+
+    @media screen and(min-width:$screen-md-min) {
+      background-color: transparent;
+      margin-top: 0px;
+      height: 80vh;
+    }
+
+    p {
+      @media screen and(min-width:$screen-md-min) {
+        color: var(--color-3);
+      }
+    }
+
+    .content {
+      @media screen and(min-width:$screen-md-min) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      > div {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  .content-block {
+    @media screen and(min-width: $screen-lg) {
+      height: 80vh;
+    }
+    h1 {
+      &:after {
+        background-color: var(--color-3);
+      }
+    }
+  }
+}

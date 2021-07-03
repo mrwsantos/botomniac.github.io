@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>TEST LANGUAGE</h1>
+
+
+    <script>
+        var userLang = '';
+
+        function setCookie(cookieName, cookieValue, daysToExpire, path, domain) {
+            var date = new Date();
+            date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+            document.cookie = cookieName + "=" + cookieValue + "; expires=" + date.toGMTString() + 'path=' + path +
+                'domain=' + domain;
+            console.log("setCookieValue: " + cookieValue);
+        }
+
+
+        function getCookieValue(cookieName) {
+            var cookieValue = document.cookie.match('(^|;)\\s*' + cookieName + '\\s*=\\s*([^;]+)');
+            return cookieValue ? cookieValue.pop() : '';
+        }
+
+        function deleteCookie() {
+            document.cookie = "userLang=''; max-age=0; expires=0";
+            console.log("Cookies deleted");
+        }
+
+        //PEGAR INFO SE JA EXISTE O COOKIE
+        function ifCookieExists() {
+            if (getCookieValue('userLang').length) {
+                // console.log('tem cookie')
+                if (userLang === "pt-BR") {
+                    $('body').attr('lang','pt-BR');
+                } else {
+                    $('body').attr('lang','en-US');
+                }
+            } else {
+                ifCookieNOTExists();
+            }
+        }
+
+        function ifCookieNOTExists() {
+            userLang = navigator.language || navigator.userLanguage;
+            setCookie('userLang', userLang, '20');
+            ifCookieExists();
+        }
+    </script>
+</body>
+
+</html>

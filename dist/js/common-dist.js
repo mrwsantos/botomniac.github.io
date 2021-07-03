@@ -1,1 +1,0 @@
-$(document).ajaxStop(function(){$(".collapse-trigger").click(function(){$("body").toggleClass("menuCollapsed")})}),window.onload=function(){};
