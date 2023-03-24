@@ -4,8 +4,8 @@
   "description": "profile, css, minimal, portfolio",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile:sass": "node-sass src/scss/imports.scss src/dist/css/imports.css -w"
+    "sass": "node-sass scss/imports.scss dist/css/imports.css -w"
+
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "gulp": "^3.9.1",
     "gulp-minify": "^3.1.0",
     "gulp-sass": "^4.1.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "6.0.1",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-uglifycss": "^1.1.0"
