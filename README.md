@@ -7,14 +7,16 @@ I hope you enjoy browsing through my work! Please feel free to contact me with a
 <hr/>
 There are two themes for you to choose: dark and light.
 ### - Dark theme: 
-![dark theme](https://mrwsantos.github.io/mrwsantos.io/img/dark-theme-mrwsite.png)
+<img src="https://mrwsantos.github.io/mrwsantos.io/img/dark-theme-mrwsite.png" title="dark theme image" />
+
 ### - Light theme:
-![light theme](https://mrwsantos.github.io/mrwsantos.io/img/light-theme-mrwsite.png)
+<img src="https://mrwsantos.github.io/mrwsantos.io/img/light-theme-mrwsite.png" title="light theme image" />
 
 You also have the option to switch between English and Portuguese languages, which can be found in the bottom left corner of the screen: 
-![changing language spot](https://mrwsantos.github.io/mrwsantos.io/img/switch-languages-mrwsite.png)
+<img src="https://mrwsantos.github.io/mrwsantos.io/img/switch-languages-mrwsite.png" title="changing language spot image" />
 
 <hr/>
 🐰🥚
 There are still some easter eggs on the page, I hope you have fun finding them.  Pay attention to the details!
+<br/>
 Thank you and see you guys soon!
