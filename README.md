@@ -12,7 +12,7 @@ There are two themes for you to choose: dark and light.
 ### - Light theme:
 <img src="https://mrwsantos.github.io/mrwsantos.io/img/light-theme-mrwsite.png" title="light theme image" />
 
-You also have the option to switch between English and Portuguese languages, which can be found in the bottom left corner of the screen: 
+You also have the option to switch between English and Portuguese languages, which can be found in the bottom left corner of the screen (desktop) or in the top right corner (mobile): 
 <img src="https://mrwsantos.github.io/mrwsantos.io/img/switch-languages-mrwsite.png" title="changing language spot image" />
 
 <hr/>
