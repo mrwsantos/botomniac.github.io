@@ -1038,7 +1038,7 @@ globule@^1.0.0:
   integrity sha512-OPTIfhMBh7JbBYDpa5b+Q5ptmMWKwcNcFSR/0c6t8V4f3ZAVBEsKNY37QdVqmLRYSMhOUGYrY0QhSoEpzGr/Eg==
   dependencies:
     glob "~7.1.1"
-    lodash "^4.17.21"
+    lodash "^4.17.20"
     minimatch "~3.0.2"
 
 globule@~0.1.0:
