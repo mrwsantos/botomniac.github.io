@@ -27,7 +27,8 @@
     "gulp-uglifycss": "^1.1.0"
   },
   "dependencies": {
-    "lodash": ">=4.17.12",
-    "simplelightbox": "^2.2.1"
+    "lodash": ">=4.17.21",
+    "simplelightbox": "^2.2.1",
+    "jsonschema": "1.4.1"
   }
 }
